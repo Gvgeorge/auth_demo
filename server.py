@@ -10,6 +10,13 @@ import re
 from fastapi import FastAPI, Cookie, Body, Request
 from fastapi.responses import Response
 
+from loguru import logger
+
+
+logger.add('authdemo.log', format="{time} {level} {message}",
+           retention='1 week',
+           level="INFO")
+
 
 app = FastAPI()
 
@@ -109,6 +116,7 @@ def process_login_page(data: dict = Body(...)):
 @app.post('/unify_phone_from_json')
 async def unify_phone_from_json(phones: Request):
     data = await phones.json()
+    logger.info(msg=data)
     phone = data['phone']
     pattern = r'^[7|8]?9\d{9}$'
     common_pattern = r'\d+'
