@@ -127,7 +127,7 @@ async def unify_phone_from_form(phones: Request):
     data = await phones.form()
     logger.info(data)
     phone = data['phone']
-    return (unify_phone(phone))
+    return unify_phone(phone)
 
 
 @app.get('/unify_phone_from_query')
@@ -135,7 +135,15 @@ async def unify_phone_from_query(phones: Request):
     data = phones.query_params
     logger.info(data)
     phone = data['phone']
-    return (unify_phone(phone))
+    return unify_phone(phone)
+
+
+@app.get('/unify_phone_from_cookies')
+async def unify_phone_from_cookies(phones: Request):
+    data = phones.cookies
+    logger.info(data)
+    phone = data['phone']
+    return unify_phone(phone)
 
 
 def unify_phone(phone):
