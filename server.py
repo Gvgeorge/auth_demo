@@ -10,6 +10,7 @@ import re
 from fastapi import FastAPI, Cookie, Body, Request
 from fastapi.responses import Response
 
+
 from loguru import logger
 
 
@@ -124,6 +125,14 @@ async def unify_phone_from_json(phones: Request):
 @app.post('/unify_phone_from_form')
 async def unify_phone_from_form(phones: Request):
     data = await phones.form()
+    logger.info(data)
+    phone = data['phone']
+    return (unify_phone(phone))
+
+
+@app.get('/unify_phone_from_query')
+async def unify_phone_from_query(phones: Request):
+    data = phones.query_params
     logger.info(data)
     phone = data['phone']
     return (unify_phone(phone))
