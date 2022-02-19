@@ -118,6 +118,18 @@ async def unify_phone_from_json(phones: Request):
     data = await phones.json()
     logger.info(data)
     phone = data['phone']
+    return (unify_phone(phone))
+
+
+@app.post('/unify_phone_from_form')
+async def unify_phone_from_form(phones: Request):
+    data = await phones.form()
+    logger.info(data)
+    phone = data['phone']
+    return (unify_phone(phone))
+
+
+def unify_phone(phone):
     pattern = r'^[7|8]?9\d{9}$'
     common_pattern = r'\d+'
     match = re.findall(common_pattern, phone)
