@@ -27,8 +27,8 @@ PASSWORD_SALT = '74fe9eecf40743eabb3a3566498485c' + \
 
 users = {'alexey@user.com': {
     'name': 'Алексей',
-    'password': 'df0c54b681d5f589ac37bb282c57bb2d51747f12d' +
-                '9f00f6fd1c4aaaed70b75b3',
+    'password': 'f7bd2a6e299151eb65240395c7c7a7fe14a' +
+                'f15728a5e65cacba0793980e31f63',
     'balance': 100000
 },
     'petr@user.com': {
