@@ -2,4 +2,4 @@
 
 Делали на курсе - https://stepik.org/course/96018/syllabus
 
-Также он загружен на сервер и доступен по адресу - https://authdemka.ru/ (alexey@user.com, randompass)
+Также он загружен на сервер и доступен по адресу - https://authdemka.ru/ (alexey@user.com, random_pass)
